@@ -14,3 +14,11 @@
   - `aria-expanded`
   - `<label for="filter-color-{index}">`
   - Recursive call `<svelte:self tree={child}/>`
+- dynamic routes
+  - `event.fetch` to get a static (`*.md`) files
+  - `$:`
+  - TailwindCSS `h1 { @apply text-4xl font-bold text-gray-900 }`
+  - package `marked` for displaying `*.md` files
+  - `load` function
+  - `+page.server`
+  - `<div>{@html marked(data)}</div>`
