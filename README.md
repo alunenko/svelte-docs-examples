@@ -4,7 +4,7 @@
   - import app css as global styles
   - get static data
   - `{#if}{:else}{/if}`
-  - {#each arr as item, index}
+  - `{#each arr as item}`
   - using **TreeView** component
     - pass data via props
   - `<slot />`

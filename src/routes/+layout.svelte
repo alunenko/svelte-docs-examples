@@ -1,11 +1,13 @@
 <script lang="ts">
     import "../app.css";
-    import TreeView from "./TreeView.svelte";
-    import {tree} from "./data"; 
+    import { tree } from '$lib';
+    import TreeView from '$lib/TreeView/TreeView.svelte';
 </script>
 
 <div class="main-layout flex flex-col h-screen">
-    <header class="h-16 items-center flex px-4 bg-slate-900 text-white">Header</header>
+    <header class="h-16 items-center flex px-4 bg-slate-900 text-white">
+        <a href="/">Home</a>
+    </header>
     
     <div class="flex flex-1 overflow-hidden">
         <div class="grid grid-cols-4">
