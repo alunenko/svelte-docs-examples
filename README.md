@@ -22,3 +22,5 @@
   - `load` function
   - `+page.server`
   - `<div>{@html marked(data)}</div>`
+- svelte/store#writable
+  - for dynamic expanding menu
