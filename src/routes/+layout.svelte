@@ -2,6 +2,10 @@
     import "../app.css";
     import { tree } from '$lib';
     import TreeView from '$lib/TreeView/TreeView.svelte';
+    import { page } from '$app/stores';
+    import { cleanedPathname } from '$lib/stores/treeView.store';
+
+    cleanedPathname.set($page.url.pathname.replace(/-/g, '').split('/'));
 </script>
 
 <div class="main-layout flex flex-col h-screen">

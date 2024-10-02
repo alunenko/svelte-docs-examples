@@ -1,14 +1,32 @@
 <script lang="ts">
     import { page } from '$app/stores';
     import type { TTree } from '$lib/TreeView/tree-data';
+    import { cleanedPathname } from '$lib/stores/treeView.store';
+    import { onMount } from 'svelte';
+    
+    let localCPT: string[] = []; // local cleanedPathname
 
+    const unsubscribeCleanedPathname = cleanedPathname.subscribe((val) => {
+      localCPT = val;
+    });
+
+    onMount(() => {
+      // Clean up subscription
+      return () => {
+        unsubscribeCleanedPathname();
+      };
+    });
+    
     export let tree: TTree;
-
     const {title, children, slug, isLink} = tree;
 
-    const cleanedPathname = $page.url.pathname.replace(/-/g, '').split('/');
     const cleanedTitle = title?.toLowerCase().replace(/[-,\/]/g, '') || '';
-    let isOpen = cleanedPathname.includes(cleanedTitle);
+    let isOpen = localCPT.includes(cleanedTitle);
+
+    if(isOpen) {
+      const matchIndex = localCPT.indexOf(cleanedTitle);
+      if(matchIndex !== -1) localCPT.splice(matchIndex, 1);
+    }
     const toggleSection = () => isOpen = !isOpen;
     
     $: isLinkActive = $page.url.pathname === slug;
