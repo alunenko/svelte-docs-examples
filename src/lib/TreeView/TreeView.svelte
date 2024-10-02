@@ -3,10 +3,13 @@
     import type { TTree } from '$lib/TreeView/tree-data';
 
     export let tree: TTree;
+
     const {title, children, slug, isLink} = tree;
 
-    let isOpen = false;
-    let toggleSection = () => isOpen = !isOpen;
+    const cleanedPathname = $page.url.pathname.replace(/-/g, '').split('/');
+    const cleanedTitle = title?.toLowerCase().replace(/[-,\/]/g, '') || '';
+    let isOpen = cleanedPathname.includes(cleanedTitle);
+    const toggleSection = () => isOpen = !isOpen;
     
     $: isLinkActive = $page.url.pathname === slug;
 </script>

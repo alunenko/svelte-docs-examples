@@ -1,4 +1,4 @@
-# Export creates a component prop
+# [Export creates a component prop](https://svelte.dev/docs/svelte-components#script-1-export-creates-a-component-prop)
 Svelte uses the export keyword to mark a variable declaration as a property or prop, which means it becomes accessible to consumers of the component (see the section on attributes and props for more information).
 ```sveltehtml
 <script>
@@ -37,7 +37,7 @@ If you export a const, class or function, it is readonly from outside the compon
 </script>
 ```
 
-Readonly props can be accessed as properties on the element, tied to the component using bind:this syntax.
+Readonly props can be accessed as properties on the element, tied to the component using `bind:this` syntax.
 
 You can use reserved words as prop names.
 

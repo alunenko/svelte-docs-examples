@@ -2,13 +2,18 @@
   * of Svelte components unless you use <style global> or add an external CSS file.
   * This is because Svelte <style> blocks are scoped by default.
   */
-h1 { @apply text-4xl  font-bold     text-gray-900 }
-h2 { @apply text-3xl  font-semibold text-gray-900 }
-h3 { @apply text-2xl  font-semibold text-gray-900 }
-h4 { @apply text-xl   font-medium   text-gray-900 }
-h5 { @apply text-lg   font-medium   text-gray-900 }
-h6 { @apply text-base font-medium   text-gray-900 }
-p { @apply text-lg text-gray-700 my-2 }
-pre { @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto }
-ol { @apply list-decimal list-inside space-y-2 }
-li { @apply text-gray-800 font-semibold }
+.content h1 { @apply my-6 text-4xl  font-bold     text-gray-900 }
+.content h2 { @apply my-5 text-3xl  font-semibold text-gray-900 }
+.content h3 { @apply my-4 text-2xl  font-semibold text-gray-900 }
+.content h4 { @apply my-3 text-xl   font-medium   text-gray-900 }
+.content h5 { @apply my-2 text-lg   font-medium   text-gray-900 }
+.content h6 { @apply my-1 text-base font-medium   text-gray-900 }
+.content p { @apply text-lg text-gray-700 my-2 }
+.content pre { @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto }
+.content ol { @apply list-decimal list-inside space-y-2 }
+.content li { @apply text-gray-800 font-semibold list-disc mx-4 }
+.content p > code,
+.content li > code
+{ @apply bg-gray-700 text-white p-1 }
+.content a { @apply hover:text-blue-700 underline transition ease-in-out duration-300 }
+.content hr { @apply my-6 }
